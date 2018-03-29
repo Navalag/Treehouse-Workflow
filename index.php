@@ -1,6 +1,3 @@
-<html>
-<body>
-
 <?php 
 include("inc/data.php");
 include("inc/functions.php");
@@ -15,22 +12,17 @@ include("inc/header.php"); ?>
 
 				<h2>May we suggest something?</h2>
 
-				 <ul class="items">
-           
-					<?php 
+        <ul class="items">
+            <?php
             $random = array_rand($catalog,4);
-            foreach($random as $id) {
-              echo get_item_html($id,$catalog[$id]);
+            foreach ($random as $id) {
+                echo get_item_html($id,$catalog[$id]);
             }
-          ?>
-           
-			   </ul>
+            ?>							
+				</ul>
 
 			</div>
 
 		</div>
 
-  <?php include("inc/footer.php"); ?>
-  
-</body>
-</html>
+<?php include("inc/footer.php"); ?>
