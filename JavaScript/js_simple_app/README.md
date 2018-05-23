@@ -11,4 +11,4 @@ Use JavaScript to build an RSVP web application. Many of the features you'll bui
 - DOM manipulation
 - Event handling
 
-### Source - [Treehouse](https://teamtreehouse.com/).
+### Source - [Treehouse](https://teamtreehouse.com/techdegree).
