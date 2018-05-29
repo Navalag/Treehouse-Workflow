@@ -21,7 +21,11 @@ if (isset($_GET["cat"])) {
 if (isset($_GET["pg"])) {
   $current_page = filter_input(INPUT_GET,"pg",FILTER_SANITIZE_NUMBER_INT);
 }
-$total_items = get_catalog_count($section); 
+if (empty($current_page)) {
+  $current_page = 1;
+}
+
+$total_items = get_catalog_count($section);
 $total_pages = ceil($total_items / $items_per_page);
 
 //limit results in redirect
@@ -53,6 +57,21 @@ if (empty($section)) {
   $catalog = category_catalog_array($section,$items_per_page,$offset);
 }
 
+$pagination = "<div class=\"pagination\">";
+$pagination .= "Pages: ";  
+for ($i = 1;$i <= $total_pages;$i++) {
+  if ($i == $current_page) {
+    $pagination .= " <span>$i</span>";
+  } else {
+    $pagination .= " <a href='catalog.php?";
+    if (!empty($section)) {
+      $pagination .= "cat=".$section."&";
+    }
+    $pagination .= "pg=$i'>$i</a>";
+  }
+}
+$pagination .= "</div>";
+
 include("inc/header.php"); ?>
 
 <div class="section catalog page">
@@ -64,7 +83,7 @@ include("inc/header.php"); ?>
             echo "<a href='catalog.php'>Full Catalog</a> &gt; ";
         }
         echo $pageTitle; ?></h1>
-        
+        <?php echo $pagination; ?>
         <ul class="items">
             <?php
             foreach ($catalog as $item) {
@@ -72,6 +91,7 @@ include("inc/header.php"); ?>
             }
             ?>
         </ul>
+        <?php echo $pagination; ?>
         
     </div>
 </div>
