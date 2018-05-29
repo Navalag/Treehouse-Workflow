@@ -2,7 +2,7 @@
 include("inc/functions.php");
 
 if (isset($_GET["id"])) {
-    $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
+    $id = filter_input(INPUT_GET,"id",FILTER_SANITIZE_NUMBER_INT);
     $item = single_item_array($id);
 }
 
