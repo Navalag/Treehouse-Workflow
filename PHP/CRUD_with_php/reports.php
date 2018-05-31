@@ -2,7 +2,7 @@
 require 'inc/functions.php';
 
 $page = "reports";
-$pageTitle = "Reports | Time Tracker";
+$pageTitle = "Task | Time Tracker";
 
 include 'inc/header.php';
 ?>
@@ -13,12 +13,7 @@ include 'inc/header.php';
         </div>
         <div class="section page">
             <div class="wrapper">
-                <table>
-                    <tr>
-                        <th class='grand-total-label' colspan='2'>Grand Total</th>
-                        <th class='grand-total-number'>0</th>
-                    </tr>
-                </table>
+
             </div>
         </div>
     </div>
