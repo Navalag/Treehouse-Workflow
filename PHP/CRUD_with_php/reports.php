@@ -2,7 +2,7 @@
 require 'inc/functions.php';
 
 $page = "reports";
-$pageTitle = "Task | Time Tracker";
+$pageTitle = "Reports | Time Tracker";
 
 include 'inc/header.php';
 ?>
@@ -13,7 +13,23 @@ include 'inc/header.php';
         </div>
         <div class="section page">
             <div class="wrapper">
-
+                <table>
+                    <?php
+                    $total = 0;
+                    foreach (get_task_list() as $item) {
+                        $total += $item['time'];
+                        echo "<tr>\n";
+                        echo "<td>". $item['title'] . "</td>\n";
+                        echo "<td>". $item['date'] . "</td>\n";
+                        echo "<td>". $item['time'] . "</td>\n";
+                        echo "</tr>\n";
+                    }
+                    ?>
+                    <tr>
+                        <th class='grand-total-label' colspan='2'>Grand Total</th>
+                        <th class='grand-total-number'><?php echo $total; ?></th>
+                    </tr>
+                </table>
             </div>
         </div>
     </div>
