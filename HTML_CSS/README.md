@@ -8,6 +8,12 @@ Whether you are coding for fun or planning to start a career in web development,
 For all this layouts was used the foundational principles of responsive design as a framework for thinking about page layout. 
 Responsive web design is collection of techniques for building websites that work on multiple screen sizes.
 
+<img src="screenshots/screen1.png" alt="screenshot for project" title="screenshot for project">
+
+<img src="screenshots/screen4.png" alt="screenshot for project" title="screenshot for project">
+
+<img src="screenshots/screen6.png" alt="screenshot for project" title="screenshot for project">
+
 ## Used technologies:
 
 - Basic Selectors
