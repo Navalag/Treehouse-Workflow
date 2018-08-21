@@ -2,11 +2,29 @@
 
 class Render
 {
-    public static function __toString()
+    public function __toString()
     {
-        $output = "";
-        $output .= "The following methods are available for " . __CLASS__ ." objects: \n";
+        $output = "The following methods are available for " . __CLASS__ ." objects: \n";
         $output .= implode("\n", get_class_methods(__CLASS__));
+        return $output;
+    }
+    
+    public static function listShopping($ingredient_list)
+    {
+        ksort($ingredient_list);
+        return implode("\n", array_keys($ingredient_list));
+    }
+    
+    public static function listRecipes($titles)
+    {
+        asort($titles);
+        $output = "";
+        foreach ($titles as $key => $title) {
+            if ($output != "") {
+                $output .= "\n";
+            }
+            $output .= "[$key] $title";
+        }
         return $output;
     }
     
